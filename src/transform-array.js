@@ -1,4 +1,6 @@
-function transform(arr) {
+const CustomError = require("../extensions/custom-error");
+
+module.exports = function transform(arr) {
   let ans = [];
   for (let i = 0; i < arr.length; i++) {
     if ( typeof arr[i] === 'string') {
@@ -24,6 +26,4 @@ function transform(arr) {
     }
   }
   return ans;
-}
-
-console.log(transform([1, 2, 3, '--discard-prev', 4, 5]));
+};

@@ -1,4 +1,6 @@
-function getSeason(date) {
+const CustomError = require("../extensions/custom-error");
+
+module.exports = function getSeason(date) {
   let ans = '';
   let seasonsDate = [
     [new Date(1900, 6, 1), new Date(1900, 8, 31)],
@@ -8,7 +10,6 @@ function getSeason(date) {
   ];
   let seasons = ['summer', 'autumn', 'winter', 'spring'];
   let myDate = new Date(1900, date.getMonth(), date.getDay());
-
   for (let i = 0; i < seasonsDate.length; i++) {
     if (myDate >= seasonsDate[i][0] && myDate <= seasonsDate[i][1]) {
       ans = seasons[i];
@@ -17,7 +18,5 @@ function getSeason(date) {
   if (ans === '') {
     throw new Error('Not a date!');
   }
-return ans;
-}
-
-console.log(getSeason(new Date(2020, 2, 31)));
+  return ans;
+};

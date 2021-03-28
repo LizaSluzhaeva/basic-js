@@ -1,4 +1,6 @@
- function createDreamTeam(members) {
+const CustomError = require("../extensions/custom-error");
+
+module.exports = function createDreamTeam(members) {
   let str = '';
   let arr = [];
   if (Array.isArray(members) ) {
@@ -11,6 +13,4 @@
     return str;
   }
   return false;
-}
-
-console.log(createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]));
+};
